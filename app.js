@@ -5,6 +5,7 @@ const path = require('path');
 const app = express();
 const port = 3000;
 const fs = require('fs');
+const ip = 'localhost';
 // Configuración de middleware para analizar el cuerpo de las solicitudes
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -164,5 +165,5 @@ app.get('/login', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Servidor escuchando en http://127.0.0.1:${port}`);
+    console.log(`Servidor escuchando en http://${ip}:${port}`);
 });
