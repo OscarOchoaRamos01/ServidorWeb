@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login y Registro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="/Img/Card1.jpg" alt="Imagen de bienvenida" style="max-width: 400px; height: auto;">
+        </div>
+        <div class="form-container">
+            <div class="form-box">
+                <div class="toggle-buttons">
+                    <button id="login-toggle" class="toggle-btn active">Iniciar Sesión</button>
+                    <button id="register-toggle" class="toggle-btn">Registrarse</button>
+                </div>
+                <div id="login-form" class="form">
+                    <h1>Iniciar Sesión</h1>
+                    <form action="http://127.0.0.1:3000/login" method="POST">
+                        <div class="textbox">
+                            <input type="text" placeholder="Usuario" name="username" required>
+                        </div>
+                        <div class="textbox">
+                            <input type="password" placeholder="Contraseña" name="password" required>
+                        </div>
+                        <button type="submit" class="btn">Entrar</button>
+                        <a href="#" id="forgot-password">¿Olvidaste tu contraseña?</a>
+                        <a href="/Inicio.html" id="">Seguir como invitado</a>
+                    </form>
+                    
+                </div>
+                <div id="register-form" class="form" style="display: none;">
+                    <h1>Registrarse</h1>
+                    <form action="http://127.0.0.1:3000/registro" method="POST">
+                        <div class="textbox">
+                            <input type="text" placeholder="Nombre Completo" name="nombre_completo" required>
+                        </div>
+                        <div class="textbox">
+                            <input type="email" placeholder="Correo Electrónico" name="correo_electronico" required>
+                        </div>
+                        <div class="textbox">
+                            <input type="text" placeholder="Usuario" name="usuario" required>
+                        </div>
+                        <div class="textbox">
+                            <input type="password" placeholder="Contraseña" name="contraseña" required>
+                        </div>
+                        <button type="submit" class="btn">Registrarse</button>
+                    </form>
+                </div>
+                <div id="forgot-password-form" class="form" style="display: none;">
+                    <h1>Recuperar Contraseña</h1>
+                    <form>
+                        <div class="textbox">
+                            <input type="email" placeholder="Correo Electrónico" name="email" required>
+                        </div>
+                        <button type="submit" class="btn">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
