@@ -1,4 +1,4 @@
-const MAIN_PATH = "http://127.0.0.1:3000/api/";
+const MAIN_PATH = "http://34.195.44.244:3000/api/";
 
 const date = new Date();
 let currentDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();

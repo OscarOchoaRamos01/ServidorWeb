@@ -11,17 +11,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Configuración de archivos estáticos
-app.use(express.static(path.join(__dirname, 'Contactanos')));
-app.use(express.static(path.join(__dirname, 'Login')));
+//app.use(express.static(path.join(__dirname, 'Contactanos')));
+//app.use(express.static(path.join(__dirname, 'Login')));
 app.use(express.static(path.join(__dirname)));
 
 // Configuración de conexión a MySQL
 let conexion = mysql.createConnection({
-    host: "localhost",
+    host: "mysql.cx6ywqwc6n1s.us-east-1.rds.amazonaws.com",
     database: "db_consultas",
-    user: "root",
-    password: "oscar",
-    port: 33060
+    user: "admin",
+    password: "Polula3128"
 });
 
 
@@ -108,11 +107,6 @@ app.post('/login', (req, res) => {
 
 
 
-//calendario..
-app.get("/", function (req, res) {
-    console.log("Ruta inicial");
-    res.send("Ruta inicial");
-});
 
 app.get("/api/dates/:current", (req, res) => {
     var request = req.params.current;
@@ -177,15 +171,15 @@ app.get('/api/events', (req, res) => {
 
 
 // Servir el archivo HTML principal para Contactanos
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Contactanos', 'contactanos.html'));
-});
+//app.get('/', (req, res) => {
+    //res.sendFile(path.join(__dirname, 'Contactanos', 'contactanos.html'));
+//});
 
 // Servir el archivo HTML principal para Login
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Login', 'index.html'));
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'Inicio.html'));
 });
 
 app.listen(port, () => {
-    console.log(`Servidor escuchando en http://127.0.0.1:${port}`);
+    console.log(`Servidor escuchando en http://34.195.44.244:${port}`);
 });

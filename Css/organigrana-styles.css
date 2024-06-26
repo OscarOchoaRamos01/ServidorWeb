@@ -503,3 +503,10 @@ tr:hover td {
     padding: 10px;
   }
 }
+
+@media only screen and (max-width: 650px) {
+    .aboutpicture {
+        width: 400px;
+        margin-top: 40px;
+    }
+}

@@ -355,7 +355,7 @@ a {
     font-size: inherit;
 }
 
-@media only screen and (min-width: 480px) and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .hero {
         height: 40rem;
     }
@@ -375,6 +375,8 @@ a {
         /* Ajusta el padding para pantallas pequeñas */
     }
 }
+
+ 
 
 
 html {
