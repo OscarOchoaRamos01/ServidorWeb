@@ -24,29 +24,45 @@ document.getElementById('forgot-password').addEventListener('click', function(e)
 });
 
 
+
+
 $(document).ready(function() {
-    $('#login-btn').click(function(e) {
-        e.preventDefault();
-        
-        // Obtener los valores del formulario
-        var username = $('input[name="username"]').val();
-        var password = $('input[name="password"]').val();
-        
-        // Realizar la solicitud AJAX para iniciar sesión
+    $('#login-toggle').click(function() {
+        $('#login-form').show();
+        $('#register-form').hide();
+        $('#forgot-password-form').hide();
+        $('#login-toggle').addClass('active');
+        $('#register-toggle').removeClass('active');
+    });
+
+    $('#register-toggle').click(function() {
+        $('#login-form').hide();
+        $('#register-form').show();
+        $('#forgot-password-form').hide();
+        $('#register-toggle').addClass('active');
+        $('#login-toggle').removeClass('active');
+    });
+
+    $('#registerForm').submit(function(event) {
+        event.preventDefault();
+        const formData = $(this).serialize();
+
         $.ajax({
-            url: '/login',
-            method: 'POST',
-            data: { username: username, password: password },
+            type: 'POST',
+            url: 'http://127.0.0.1:3000/registro',
+            data: formData,
             success: function(response) {
-                // Mostrar el mensaje de inicio de sesión exitoso
-                $('#login-message').show();
-                $('#login-status').text(response.message);
+                // Redirigir o mostrar un mensaje de éxito
+                window.location.href = 'Redirectorio2.html';
             },
-            error: function(xhr, status, error) {
-                // Mostrar el mensaje de error de inicio de sesión
-                $('#login-message').show();
-                $('#login-status').text(xhr.responseJSON.message);
+            error: function(xhr) {
+                if (xhr.status === 400) {
+                    $('#register-error').text('El correo electrónico ya está registrado.').show();
+                } else {
+                    $('#register-error').text('Ocurrió un error al procesar tu registro.').show();
+                }
             }
         });
     });
 });
+

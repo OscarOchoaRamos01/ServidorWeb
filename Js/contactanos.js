@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 showNotification('El campo de celular no puede estar vacío');
                 event.preventDefault();
             } else {
-                redirectToPageWithLoader('http://127.0.0.1:5500/Inicio/Inicio.html');
+                redirectToPageWithLoader('http://127.0.0.1:3000/Inicio/Inicio.html');
             }
         });
     } else {

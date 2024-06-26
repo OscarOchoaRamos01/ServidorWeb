@@ -1,4 +1,4 @@
-const MAIN_PATH = "http://localhost/api/";
+const MAIN_PATH = "http://127.0.0.1:3000/api/";
 
 const date = new Date();
 let currentDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
@@ -24,17 +24,17 @@ fetch(MAIN_PATH + "dates/" + currentDate)
   });
 
 function displayAnnouncement(announcement) {
-  const marqueeContainer = document.getElementById("marqueeContainer");
-  const p = document.createElement("p");
-
-  // Crear spans para cada letra
-  for (let char of announcement) {
-    const span = document.createElement("span");
-    span.textContent = char;
-    p.appendChild(span);
-  }
-
-
-  marqueeContainer.appendChild(p);
-  console.log(announcement);
+    const marqueeContainer = document.getElementById("marqueeContainer");
+    const p = document.createElement("p");
+    
+    // Crear spans para cada letra
+    for (let char of announcement) {
+        const span = document.createElement("span");
+        span.textContent = char;
+        p.appendChild(span);
+    }
+    
+    
+    marqueeContainer.appendChild(p);
+    console.log(announcement);
 }

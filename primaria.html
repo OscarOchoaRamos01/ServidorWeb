@@ -6,14 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="/Css/primaria.css">
-  <link rel="stylesheet" href="/Css/index-styles.css">
+  <link rel="stylesheet" href="/Css/niveles.css">
   <link rel="stylesheet" href="/Css/index-navbar.css">
   <link rel="stylesheet" href="/Css/index-footer.css">
 </head>
 
 <body>
-  <!----TABLA DE MENU----->
+  <div id="progress">
+    <span id="progress-value">&#x1F815</span>
+  </div>
+  <!----INICIO DEL MENU----->
   <header class="header">
     <a href="#" class="header__logo"></iconify-icon>Seminario Menor</a>
 
@@ -42,9 +44,11 @@
 
 
               <ul class="dropdown__menu">
-                <li class="dropdown__item"><a href="#" class="nav__link">Historia</a></li>
-                <li class="dropdown__item"><a href="/profesores.html" class="nav__link">Profesores</a></li>
-                <li class="dropdown__item"><a href="#" class="nav__link">Mision y Vision</a></li>
+                <li class="dropdown__item"><a href="#historia" class="nav__link">Historia</a></li>
+                <li class="dropdown__item"><a href="/profesores.html" class="nav__link">Profesores</a>
+                </li>
+                <li class="dropdown__item"><a href="/mision.html" class="nav__link">Mision y Vision</a>
+                </li>
                 <li class="dropdown__item"><a href="#" class="nav__link">Ideario</a></li>
               </ul>
             </li>
@@ -52,17 +56,20 @@
             <li class="nav__item"><a href="/organigrama.html" class="nav__link">Organigrama</a></li>
 
             <li class="nav__item dropdown">
-              <a href="" class="nav__link dropdown__link">Niveles <i class='bx bx-chevron-down dropdown__icon'></i></a>
+              <a href="#" class="nav__link dropdown__link">Niveles <i class='bx bx-chevron-down dropdown__icon'></i></a>
 
               <ul class="dropdown__menu">
                 <li class="dropdown__item"><a href="/primaria.html" class="nav__link">Primaria</a></li>
+                <li class="dropdown__item"><a href="/secundaria.html" class="nav__link">Secundaria</a></li>
               </ul>
             </li>
 
             <li class="nav__item"><a href="/contactanos.html" class="nav__link">Contactanos</a></li>
+
             <li class="nav__item dropdown">
               <a href="/Login/index.html" class="nav__link dropdown__link">Iniciar Sesion </a>
             </li>
+
           </ul>
         </div>
       </div>
@@ -108,8 +115,9 @@
             en la vida cotidiana de forma exitosa.</p>
         </div>
 
+
         <figure class="aboutpicture">
-          <img src="Img/primaria/logo1.png" class="about__img">
+          <img src="/Img/C1.jpg" class="about__img">
         </figure>
       </section>
     </main>
@@ -178,40 +186,6 @@
       </div>
     </div>
     <!--Parte del Nivel - Inicial -->
-    <main class="main">
-      <section class="about container">
-
-        <div class="aboutcourse">
-          <h2 class="title title--border">Registro de Asistencia y notas - PRIMARIA</h2>
-          <hr>
-        </div>
-      </section>
-    </main>
-    <!--Parte final Nivel - Inicial -->
-    <!--Parte de los botones1 -->
-    <div class="grupo">
-      <h1>Registro de asistencia - Primaria </h1>
-    </div>
-
-    <a href="https://docs.google.com/spreadsheets/d/1PDkeSIDliMdJu8OW0wRMhYla8REgqYlw9rYuUtgSPUI/edit?usp=sharing"
-      target="_blank" class="boton rojo2">P - 4Años</a>
-    <a href="https://docs.google.com/spreadsheets/d/1PDkeSIDliMdJu8OW0wRMhYla8REgqYlw9rYuUtgSPUI/edit?usp=sharing"
-      target="_blank" class="boton verde5">P - 5Años</a>
-    <a href="https://docs.google.com/spreadsheets/d/1PDkeSIDliMdJu8OW0wRMhYla8REgqYlw9rYuUtgSPUI/edit?usp=sharing"
-      target="_blank" class="boton verde6">P - 6Años</a>
-    <!--Parte final de los botones1-->
-    <!--Parte de los botones1 -->
-    <div class="grupo">
-      <h1>Registro de notas - Primaria </h1>
-    </div>
-
-    <a href="https://docs.google.com/spreadsheets/d/18NufRCvE-N2aIsOCdFjj8c1fDfkQzgp2tiIAsO0kMzk/edit?usp=sharing"
-      target="_blank" class="boton rojo2">P - 4Años</a>
-    <a href="https://docs.google.com/spreadsheets/d/18NufRCvE-N2aIsOCdFjj8c1fDfkQzgp2tiIAsO0kMzk/edit?usp=sharing"
-      target="_blank" class="boton verde5">P - 5Años</a>
-    <a href="https://docs.google.com/spreadsheets/d/18NufRCvE-N2aIsOCdFjj8c1fDfkQzgp2tiIAsO0kMzk/edit?usp=sharing"
-      target="_blank" class="boton verde6">P - 6Años</a>
-    <!--Parte final de los botones1-->
 
     <!----COMIENZO DE PIE DE PAGINA----->
     <footer>
@@ -256,6 +230,7 @@
     <SCript src="/Js/index-navbar.js"></SCript>
     <script src="/Js/animacion-1.js"></script>
     <SCript src="/Js/calendario2.js"></SCript>
+    <script src="/Js/boton-inicio.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"> </script>
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <script src="https://kit.fontawesome.com/ba5bc98e5a.js" crossorigin="anonymous"></script>

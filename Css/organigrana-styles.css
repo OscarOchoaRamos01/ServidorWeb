@@ -11,14 +11,6 @@ body {
   color: aliceblue;
 }
 
-
-/*Parte de organigrama */
-body {
-  margin: 0;
-  /*margen de 0*/
-  /*el espacio de relleno requerido por todos los lados*/
-}
-
 main {
   display: block;
 }
@@ -38,16 +30,14 @@ main {
 
 hr {
   background-color: black;
-  /*Color del hr*/
-  width: 60%;
-  /*Tamaño de hr*/
+  width: 100%;
+  padding: 2px;
 }
 
 h2 {
   display: block;
   font-size: 1.5em;
   margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
@@ -73,6 +63,7 @@ h2 {
   display: grid;
   grid-template-columns: 5fr 4fr;
   place-items: center;
+  padding-bottom: 30px;
 }
 
 .aboutcourse {
@@ -215,10 +206,6 @@ p {
   margin-top: -0.7em;
   display: block;
 }
-
-/*
-   
-   */
 
 .administration>li>a {
   margin-bottom: 25px;
@@ -446,10 +433,9 @@ p {
 
 /*comienza tabla*/
 #main-container {
-  margin: 60px auto;
+  margin: 60px;
   /*Para ajustar el tamaño para moverlo mas arriba y abajo*/
-  width: 900px;
-  /*Es el ancho de la tabla mas aumentas mas grande de hace*/
+
 }
 
 table {
@@ -481,4 +467,39 @@ tr:hover td {
   background-color: #02396f;
   /*Color de la animacion de la tabla cuando pasas el cursor*/
   color: white;
+}
+
+@media all and (max-width: 767px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .aboutpicture img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    margin-block-end: 0;
+  }
+
+  .aboutparagraph {
+    text-align: left;
+  }
+
+  #main-container {
+    margin: 60px auto;
+    padding: 10px;
+  }
+
+  .table {
+    width: 20%;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
 }

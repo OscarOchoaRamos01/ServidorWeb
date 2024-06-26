@@ -3,9 +3,9 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql2');
 const path = require('path');
 const app = express();
+
 const port = 3000;
 const fs = require('fs');
-const ip = 'localhost';
 // Configuración de middleware para analizar el cuerpo de las solicitudes
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -17,11 +17,11 @@ app.use(express.static(path.join(__dirname)));
 
 // Configuración de conexión a MySQL
 let conexion = mysql.createConnection({
-    host: "mysql-344b570b-vallegrande-161c.d.aivencloud.com",
+    host: "localhost",
     database: "db_consultas",
-    user: "avnadmin",
-    password: "AVNS_u8NtKzD1djLoParRG_W",
-    port: 15909
+    user: "root",
+    password: "oscar",
+    port: 33060
 });
 
 
@@ -151,6 +151,28 @@ app.get('/api/news', (req, res) => {
 });
 
 
+// Ruta para obtener los eventos del calendario
+app.get('/api/events', (req, res) => {
+    const query = 'SELECT id, fecha AS start, nombre_evento AS title, descripcion AS description FROM FechasCivicas';
+
+    conexion.query(query, (error, results) => {
+        if (error) {
+            console.error('Error al ejecutar la consulta:', error);
+            res.status(500).json({ error: 'Error al obtener los eventos del calendario' });
+            return;
+        }
+
+        // Transformar las fechas al formato ISO8601 (YYYY-MM-DD)
+        results.forEach(event => {
+            event.start = event.start.toISOString().split('T')[0];
+        });
+
+        res.json(results);
+    });
+});
+
+
+
 
 
 
@@ -165,5 +187,5 @@ app.get('/login', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Servidor escuchando en http://${ip}:${port}`);
+    console.log(`Servidor escuchando en http://127.0.0.1:${port}`);
 });
