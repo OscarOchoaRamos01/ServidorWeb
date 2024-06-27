@@ -4,105 +4,15 @@ body {
   min-height: 90vh;
 }
 
-#primera-seccion {
-  background: linear-gradient(rgba(68, 68, 68, 0.259), rgba(57, 56, 56, 0.116)), url(/Inicio/Img/Fondo.jpg) no-repeat center/cover;
-  background-attachment: fixed;
-  height: 100vh;
-  color: aliceblue;
-}
-
-main {
-  display: block;
-}
-
-.title {
-  font-size: 2.5rem;
-  text-align: var(--align-title);
-  color: var(--color-title);
-}
-
-::before,
-::after {
-  margin: 0;
-  /*el espacio de relleno requerido por todos los lados*/
-  box-sizing: border-box;
-}
-
-hr {
-  background-color: black;
-  width: 100%;
-  padding: 2px;
-}
-
-h2 {
-  display: block;
-  font-size: 1.5em;
-  margin-block-start: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-}
-
-.title--border::after {
-  content: "";
-  display: block;
-  width: 100px;
-  margin-top: 20px;
-  height: 4px;
-  background-color: var(--color-primary);
-}
-
-*,
-::before,
-::after {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.about-container {
-  display: grid;
-  grid-template-columns: 5fr 4fr;
-  place-items: center;
-  padding-bottom: 30px;
-}
-
 .aboutcourse {
-  width: 90%;
+  width: 100%;
 }
 
-.aboutparagraph {
-  margin: 20px 0;
-  line-height: 1.5;
-  font-weight: 300;
-}
-
-*,
-::before,
-::after {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}
-
-.aboutpicture {
+.titulo {
   text-align: center;
+  font-size: 40px;
+  padding: 20px;
 }
-
-.aboutimg {
-  width: 200px;
-  padding: 3px;
-  /*Ayuda a mover la imagen de arriba para abajo con el PX*/
-}
-
-/*Parte final organigrama*/
-/* My styles */
 
 .organigrama {
   height: 510px;
@@ -500,13 +410,13 @@ tr:hover td {
 
   th,
   td {
-    padding: 10px;
+    padding: 5px;
   }
 }
 
 @media only screen and (max-width: 650px) {
-    .aboutpicture {
-        width: 400px;
-        margin-top: 40px;
-    }
+  .aboutpicture {
+    width: 400px;
+    margin-top: 40px;
+  }
 }

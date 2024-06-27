@@ -1,9 +1,9 @@
 //FUNCION PARA IMAGENES. APARECE, DESAPARECE....
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll('.about__img'); // Selecciona todas las imágenes con la clase 'about__img'
 
-    function triggerAnimation(entries){
+    function triggerAnimation(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate'); // Agrega la clase 'animate' cuando la imagen está en vista
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const options = {
         root: null,
         rootMargin: "0px",
-        threshold: 1    
+        threshold: 1
     }
 
     const observer = new IntersectionObserver(triggerAnimation, options);
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // FUNCION PARA IMAGEN-DERECHA. APARECE,DESAPARECE,....
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const image = document.querySelector('.animated-img'); // Selecciona el elemento con la clase 'animated-img'
 
     function triggerAnimation(entries) {
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const options = {
         root: null,
         rootMargin: "0px",
-        threshold: 0.1    
+        threshold: 0.1
     }
 
     const observer = new IntersectionObserver(triggerAnimation, options);
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //FUNCION HERO ZOOM AL PASAR EL CURSOR
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Función para dividir el texto en palabras y aplicar el efecto de zoom a cada letra
     function applyZoomEffect(elementId) {
         const element = document.getElementById(elementId);
@@ -76,11 +76,11 @@ document.addEventListener("DOMContentLoaded", function() {
         // Agregar evento de mouseover a cada letra para el efecto de zoom
         const zoomedLetters = element.querySelectorAll(".zoomed-letter");
         zoomedLetters.forEach(letter => {
-            letter.addEventListener("mouseover", function() {
+            letter.addEventListener("mouseover", function () {
                 this.style.transform = "scale(1.5)"; // Ajusta la escala según sea necesario
                 this.style.transition = "transform 0.3s ease-in-out"; // Transición suave para el efecto de zoom
             });
-            letter.addEventListener("mouseout", function() {
+            letter.addEventListener("mouseout", function () {
                 this.style.transform = "scale(1)"; // Restaura la escala original al quitar el mouse
                 this.style.transition = "transform 0.3s ease-in-out"; // Transición suave para el efecto de zoom
             });
@@ -92,13 +92,13 @@ document.addEventListener("DOMContentLoaded", function() {
     applyZoomEffect("zoomed-span");
 });
 
-ScrollReveal().reveal('.hero-text, .animated-img, .contenido-cuadro, .contenido, #Reseña, .titulo-Cartas, .card, #carrusel, .mapa, .footer', {
-    origin: 'bottom',   
-    distance: '20px',   
-    duration: 1000,     
-    delay: 100,         
-    opacity: 0,         
-    scale: 0.8,         
-    easing: 'cubic-bezier(0.5, 0, 0, 1)', 
+ScrollReveal().reveal('.hero-text, .animated-img, .Seccion, .seccion-actividad, .video, .titulo-Cartas, .card, #carrusel, .mapa, .footer', {
+    origin: 'bottom',
+    distance: '20px',
+    duration: 1000,
+    delay: 100,
+    opacity: 0,
+    scale: 0.8,
+    easing: 'cubic-bezier(0.5, 0, 0, 1)',
     reset: true         // Reinicia la animación cada vez que el elemento es visible
 });

@@ -7,57 +7,103 @@ body {
     font-weight: 400;
 }
 
-.title {
-    font-size: 2.5rem;
-    text-align: var(--align-title);
-    color: var(--color-title);
-}
-
-.title--border::after {
-    content: "";
-    display: block;
-    width: 100px;
-    margin-top: 20px;
-    height: 4px;
-    background-color: var(--color-primary);
-}
-
-*,
-::before,
-::after {
-    margin: 0;
-    box-sizing: border-box;
-}
-
-.about-container {
+.Seccion {
+    font-family: 'Poppins';
+    width: 100%;
     display: grid;
-    grid-template-columns: 5fr 4fr;
     place-items: center;
 }
 
-.aboutcourse {
-    width: 90%;
+.row {
+    width: 80%;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 100px;
+    overflow: hidden;
+    padding: 4rem 0;
 }
 
-.aboutparagraph {
-    margin: 20px 0;
-    line-height: 1.5;
-    font-weight: 400;
+.row .imgWrapper {
+    overflow: hidden;
+    border-radius: 15px;
 }
 
-.aboutpicture {
-    text-align: center;
-    width: 600px;
-    margin-top: 60px;
-}
-
-.about__img {
+.row .imgWrapper img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
 }
 
-.aboutimg {
-    width: 200px;
-    padding: 3px;
+.row .imgWrapper:hover img {
+    transform: scale(1.25);
+}
+
+.row .contentWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.row .contentWrapper span.textWrapper {
+    display: block;
+    font-size: 20px;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.row .contentWrapper span.textWrapper span {
+    display: inline-block;
+    background: #383f47;
+    width: 70px;
+    height: 5px;
+}
+
+.row .contentWrapper h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #383f47;
+    padding-bottom: 20px;
+}
+
+.row .contentWrapper p {
+    font-size: 16px;
+    line-height: 25px;
+    padding-bottom: 25px;
+}
+
+@media(max-width:991px) {
+    .row {
+        grid-template-columns: 1fr;
+        grid-gap: 50px;
+    }
+
+    .row .contentWrapper {
+        padding-left: 0;
+    }
+
+}
+
+@media(max-width: 575px) {
+    .row .contentWrapper span.textWrapper {
+        font-size: 18px;
+    }
+
+    .row .contentWrapper h2 {
+        font-size: 25px;
+    }
+
+    .row .contentWrapper p {
+        font-size: 15px;
+        line-height: 22px;
+    }
 }
 
 .galeria h1 {
